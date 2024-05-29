@@ -1,0 +1,228 @@
+/* 全局样式 */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+
+    overflow-x: hidden; /* 禁止左右滚动 */
+    background-color: #090909; /* 黑色背景 */
+}
+
+/* 容器样式 */
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* 侧栏样式 */
+.sidebar {
+    width: 300px;
+    background-color: #141414;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+    margin: 20px;
+    padding-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.sidebar ul {
+    list-style: none;
+    border: #434343;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    cursor: pointer;
+    padding: 30px;
+    color: #717171;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease-in-out, height 0.3s ease-in-out;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    height: 23px; /* 初始高度 */
+    overflow: hidden;
+}
+
+
+.sidebar ul li[data-target="bike"]:hover {
+    background-image: url('images/Frame\ 1.png'); /* 替换为实际的图片路径 */
+    
+}
+
+.sidebar ul li[data-target="comb"]:hover {
+    background-image: url('images/comb.jpg'); /* 替换为实际的图片路径 */
+}
+
+.sidebar ul li[data-target="xing"]:hover {
+    background-image: url('images/xing.png'); /* 替换为实际的图片路径 */
+}
+
+.sidebar ul li[data-target="libra"]:hover {
+    background-image: url('images/libra.jpg'); /* 替换为实际的图片路径 */
+}
+
+.sidebar ul li[data-target="breathe"]:hover {
+    background-image: url('images/breathe.jpg'); /* 替换为实际的图片路径 */
+}
+
+/* 鼠标悬停效果 */
+.sidebar ul li:hover {
+    background-color: #717171;
+    height: 150px; /* 悬停时增加高度 */
+}
+
+/* 活动状态的样式 */
+.sidebar ul li.active {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
+/* 主内容样式 */
+.content {
+    flex: 1;
+    overflow-y: hidden; /* 允许上下滚动 */
+    overflow-x: hidden; /* 禁止左右滚动 */
+    padding: 20px;
+    position: relative;
+    background-color: #121212; /* 白色背景 */
+}
+
+/* 页面进入和退出的动画 */
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* 页面样式 */
+.page {
+    display: none;
+    padding: 20px;
+    background-color: #121212;
+    border-radius: 8px;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateX(100%);
+}
+
+.page.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.page.enter {
+    animation: slideIn 0.2s ease-in-out forwards;
+}
+
+.page.exit {
+    animation: slideOut 0.2s ease-in-out forwards;
+}
+
+/* 标题样式 */
+.page h1 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+/* 图片样式 */
+.page img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* 段落样式 */
+.page p {
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgb(225, 225, 225);
+}
+
+/* 嵌入容器样式 */
+/* 嵌入容器样式 */
+.embed-container {
+    position: relative;
+    width: 100%;
+    height: 1080px; /* 将高度增加到 700px */
+    box-shadow: none;
+}
+
+/* 嵌入遮罩样式 */
+.embed-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 150px;
+    background-color: #121212;
+}
+
+/* 新增的遮挡样式 */
+.overlay {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%; /* 根据需要调整宽度 */
+    height: 50px; /* 根据需要调整高度 */
+    background-color: #121212;
+    z-index: 10001; /* 确保遮挡层在最上方 */
+}
+
+
+/* 隐藏默认光标 */
+body, .page, .sidebar, .sidebar ul li, .embed-container iframe {
+    cursor: none;
+}
+
+/* 鼠标圆球悬停效果 */
+.cursor.hover {
+    background-color: transparent;
+    opacity: 0;
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-radius 0.2s ease;
+}
+
+/* 自定义光标样式 */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: fixed; /* 使用 fixed 而不是 absolute 以确保光标跟随视口移动 */
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease, opacity 0.2s ease, border-radius 0.2s ease;
+    z-index: 10000; /* 确保小球在所有内容之上 */
+    mix-blend-mode: difference;
+}
+

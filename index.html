@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2 data-target="home">Portfolio</h2>
+            <ul>
+                <!-- Removed the home item here -->
+                <li data-target="bike">Bike</li>
+                <li data-target="comb">Comb</li>
+                <li data-target="xing">Xing</li>
+                <li data-target="libra">Libra</li>
+                <li data-target="breathe">Breathe</li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section id="home" class="page active">
+                <div class="embed-container">
+                    <iframe src="https://my.spline.design/particles-14a1f9994ffb7af0b17759629243011e/" width="100%" height="100%" frameborder="0"></iframe>
+                    <div class="embed-overlay"></div> <!-- 新增的遮挡层 -->
+                </div>
+                <h1>Sup</h1>
+                <p>"I'm a Product/UIUX Designer 3rd year student at Georgia Tech double major Industrial Design & Psychology."</p>
+            </section>
+            
+            
+            <section id="bike" class="page">
+                <video autoplay loop muted controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture width="80%">
+                    <source src="video/bike.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>01.2019 - 04.2019</p>
+                <h1>Dart Electric Ride-share Bike</h1>
+                <p>Dart is an electric ride-share bicycle that refuses to compromise and dares to be exciting.</p>
+            </section>
+            <section id="comb" class="page">
+                <img src="images/xing.png" alt="Xing Image" width="80%">
+                <p>01.2019 - 04.2019</p>
+                <h1>Dart Electric Ride-share Bike</h1>
+                <p>Dart is an electric ride-share bicycle that refuses to compromise and dares to be exciting.</p>
+            </section>
+            </section>
+            <section id="xing" class="page">
+                <video autoplay loop muted controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture width="80%">
+                <source src="video/bike.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>01.2019 - 04.2019</p>
+            <h1>Dart Electric Ride-share Bike</h1>
+            <p>Dart is an electric ride-share bicycle that refuses to compromise and dares to be exciting.</p>
+            </section>
+            <section id="libra" class="page">
+                <video autoplay loop muted controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture width="80%">
+                <source src="video/bike.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>01.2019 - 04.2019</p>
+            <h1>Dart Electric Ride-share Bike</h1>
+            <p>Dart is an electric ride-share bicycle that refuses to compromise and dares to be exciting.</p>
+            </section>
+            <section id="breathe" class="page">
+                <video autoplay loop muted controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture width="80%">
+                <source src="video/bike.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>01.2019 - 04.2019</p>
+            <h1>Dart Electric Ride-share Bike</h1>
+            <p>Dart is an electric ride-share bicycle that refuses to compromise and dares to be exciting.</p>
+            </section>
+        </main>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/cursor.js"></script>
+    <script src="scripts/navigation.js"></script>
+</body>
+</html>
